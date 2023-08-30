@@ -59,7 +59,7 @@
 
 .header-h2 {
   font-size: 50px;
-  color: aqua;
+  color: red;
 }
 
 .header-h1 {
@@ -156,7 +156,7 @@
 }
 
 .intro-span {
-  color: #c71919;
+  color: black;
 }
 
 .intro-li::after {
@@ -168,15 +168,15 @@
 }
 
 .html::after {
-  animation: html 2s linear infinite;
+  animation: html 2s linear forwards;
 }
 
 .css::after {
-  animation: css 2s linear infinite;
+  animation: css 2s linear forwards;
 }
 
 .js::after {
-  animation: js 2s linear infinite;
+  animation: js 2s linear forwards;
 }
 
 @keyframes html {
