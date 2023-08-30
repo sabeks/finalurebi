@@ -276,3 +276,72 @@
 .info-p {
   font-size: 14px;
 }
+.section-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 200px !important;
+  margin-bottom: 160px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.service {
+  background-color: #f0f0f0;
+  padding: 133px 50px;
+  width: calc(25% - 30px);
+  height: 360px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+}
+
+.fa-bell::before {
+  content: "\f085";
+}
+
+.fa-html5::before {
+  content: "\f13b";
+}
+
+.fa-js::before {
+  content: "\f3b9";
+}
+
+.service-h3 {
+  font-size: 22px;
+}
+
+.service:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #15263e;
+}
+
+.service-icon {
+  font-size: 60px;
+}
+
+.fa-bell::before {
+  content: "\f085";
+}
+
+.fa-html5::before {
+  content: "\f13b";
+}
+
+.fa-js::before {
+  content: "\f3b9";
+}
+
+.service-h3 {
+  font-size: 22px;
+}
+
+.service:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #15263e;
+}
