@@ -847,8 +847,7 @@
   }
 
   .article-photo {
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 100%;
   }
   .lastest {
     font-size: 15px;
