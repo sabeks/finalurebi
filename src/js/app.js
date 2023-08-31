@@ -103,3 +103,42 @@ commentsButton3.addEventListener("click", function () {
   commentsSlides[1].classList.remove("active");
   commentsSlides[2].classList.add("active");
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const projectItems = document.querySelectorAll(".project");
+  const projectCategories = document.querySelectorAll(".projects-li");
+
+  projectCategories.forEach((category) => {
+    category.addEventListener("click", function () {
+      projectCategories.forEach((cat) => {
+        cat.classList.remove("active");
+      });
+      category.classList.add("active");
+
+      const selectedCategory = category.id.replace("li-", "");
+      projectItems.forEach((item) => {
+        const itemCategory = item.getAttribute("data-category");
+        if (selectedCategory === "all" || itemCategory === selectedCategory) {
+          item.style.opacity = "1";
+          item.style.filter = "none";
+        } else {
+          item.style.opacity = "0.5";
+          item.style.filter = "blur(3px)";
+        }
+      });
+    });
+  });
+
+  projectItems.forEach((item) => {
+    item.addEventListener("mouseover", function () {
+      const textElement = item.querySelector(".projects-p");
+      textElement.style.display = "block";
+      const iconElement = item.querySelector(".projects-icon");
+    });
+
+    item.addEventListener("mouseout", function () {
+      const textElement = item.querySelector(".projects-p");
+      textElement.style.display = "none";
+      const iconElement = item.querySelector(".projects-icon");
+    });
+  });
+});
