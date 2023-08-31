@@ -142,3 +142,48 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const sendButton = document.querySelector(".send");
+  const modal = document.querySelector(".modal");
+  const modalContent = document.querySelector(".modal-content");
+
+  sendButton.addEventListener("click", async function () {
+    console.log("Button clicked");
+
+    const formData = new FormData();
+    formData.append("name", "John Doe");
+    formData.append("email", "johndoe@example.com");
+    formData.append("website", "www.example.com");
+    formData.append("message", "Hello, this is a test message.");
+
+    const requestBody = {
+      method: "POST",
+      body: JSON.stringify(Object.fromEntries(formData)),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    try {
+      const mockApiResponse = {
+        status: 1,
+        desc: "Message has been sent successfully",
+      };
+
+      const response = new Response(JSON.stringify(mockApiResponse));
+      const data = await response.json();
+
+      if (data.status === 1) {
+        modalContent.textContent =
+          "Thank you for getting in touch! We appreciate you contacting us.";
+        modal.style.display = "block";
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+  });
+
+  modal.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+});
